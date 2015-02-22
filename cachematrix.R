@@ -24,10 +24,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
      inverse <- x$getinverse()
+     
      if(is.null(inverse)) {
           m <- x$get()
           inverse <- solve(m)
           x$setinverse(inverse)
      }
+     
      x$getinverse()
 }
